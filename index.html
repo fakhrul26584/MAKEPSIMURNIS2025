@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Majlis Apresiasi Pendidikan 2025 | SK Sungai Isap Murni</title>
+<title>Hari Anugerah Kecemerlangan 2025 | SK Sungai Isap Murni</title>
 <meta name="description" content="Buku Program Digital — Majlis Apresiasi Pendidikan SK Sungai Isap Murni 2025">
 <style>
 :root{
@@ -112,8 +112,26 @@ footer small{opacity:.65;line-height:1.6}
 .direct-banner{display:none;margin:0 auto 18px;padding:14px 18px;border-radius:18px;background:#edf4f8;color:var(--navy);font-weight:800}
 .direct-banner.show{display:block}
 
+
+.program-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.program-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;min-height:155px;transition:.2s;cursor:pointer}
+.program-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(9,43,73,.08);border-color:var(--gold)}
+.program-card .icon{font-size:30px;margin-bottom:14px}
+.program-card h3{margin:0;color:var(--navy);font-size:18px}
+.program-card p{color:var(--muted);font-size:13px;line-height:1.55;margin:8px 0 0}
+.content-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:0 10px 32px rgba(9,43,73,.05)}
+.content-card h3{color:var(--navy);margin-top:0;font-size:24px}
+.content-card p{color:var(--muted);line-height:1.8}
+.notice{background:#edf4f8;border-left:5px solid var(--blue);padding:14px 16px;border-radius:14px;color:var(--navy);font-weight:700;font-size:13px}
+.timeline{display:grid;gap:10px}
+.timeline-row{display:grid;grid-template-columns:120px 1fr;gap:15px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px}
+.timeline-row b{color:var(--blue)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery-item{aspect-ratio:1;border-radius:18px;overflow:hidden;background:#e8eef2}
+.gallery-item img{width:100%;height:100%;object-fit:cover}
+
 @media(max-width:800px){
- .nav{display:none}.menu-btn{display:block}.hero .inner{padding:90px 0}.stats,.category-grid,.about{grid-template-columns:1fr}
+ .nav{display:none}.menu-btn{display:block}.hero .inner{padding:90px 0}.stats,.category-grid,.about,.program-menu{grid-template-columns:1fr}
  .profile.show{grid-template-columns:1fr}.profile-photo{max-width:280px;margin:auto}
  footer .inner{display:block}
 }
@@ -132,9 +150,12 @@ footer small{opacity:.65;line-height:1.6}
   <button class="menu-btn" id="menuBtn">☰</button>
   <nav class="nav" id="nav">
    <a href="#utama">Utama</a>
-   <a href="#semak">Semak Anugerah</a>
-   <a href="#kategori">Kategori</a>
-   <a href="#tentang">Program</a>
+   <a href="#buku-program">Buku Program</a>
+   <a href="#tentatif">Tentatif</a>
+   <a href="#jawatankuasa">Jawatankuasa</a>
+   <a href="#kategori">Anugerah</a>
+   <a href="#semak">Semak Anak</a>
+   <a href="#galeri">Galeri</a>
   </nav>
  </div>
 </header>
@@ -142,12 +163,57 @@ footer small{opacity:.65;line-height:1.6}
 <section class="hero" id="utama">
  <div class="container inner">
   <div class="eyebrow">Buku Program Digital</div>
-  <h1>Majlis Apresiasi<br><span>Pendidikan</span></h1>
-  <div class="date">SK Sungai Isap Murni • 17 Disember 2025</div>
-  <p class="lead">Satu ruang digital untuk meraikan pencapaian murid — cari nama, lihat gambar dan semak semua anugerah yang diterima.</p>
+  <h1>Hari Anugerah<br><span>Kecemerlangan</span></h1>
+  <div class="date">SK Sungai Isap Murni • 2025 • Buku Program Digital</div>
+  <p class="lead">Buku program digital yang menghimpunkan maklumat program, kategori anugerah dan pencapaian setiap murid.</p>
   <div class="actions">
    <a class="btn btn-white" href="#semak">🔎 Semak Anugerah Murid</a>
    <a class="btn btn-gold" href="#kategori">🏆 Lihat Kategori</a>
+  </div>
+ </div>
+</section>
+
+
+<section class="section" id="buku-program">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Buku Program Digital</div>
+   <h2>Selamat Datang</h2>
+   <p>Menu utama untuk meneroka kandungan program. Kandungan rasmi seperti teks alu-aluan, tentatif dan jawatankuasa akan dimasukkan daripada dokumen program yang disahkan.</p>
+  </div>
+  <div class="program-menu">
+   <a class="program-card" href="#tentatif"><div class="icon">📋</div><h3>Tentatif</h3><p>Lihat perjalanan majlis mengikut masa dan aktiviti.</p></a>
+   <a class="program-card" href="#jawatankuasa"><div class="icon">👥</div><h3>Jawatankuasa</h3><p>Senarai urus setia dan jawatankuasa program.</p></a>
+   <a class="program-card" href="#kategori"><div class="icon">🏆</div><h3>Anugerah Kecemerlangan</h3><p>Teroka kategori anugerah dan penerima.</p></a>
+   <a class="program-card" href="#semak"><div class="icon">🔎</div><h3>Semak Anugerah Anak</h3><p>Cari nama anak dan buka profile pencapaian.</p></a>
+   <a class="program-card" href="#galeri"><div class="icon">📸</div><h3>Galeri</h3><p>Ruang galeri rasmi program.</p></a>
+   <a class="program-card" href="#tentang"><div class="icon">📖</div><h3>Tentang Program</h3><p>Maklumat ringkas dan tujuan program.</p></a>
+  </div>
+ </div>
+</section>
+
+<section class="section alt" id="tentatif">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Program</div>
+   <h2>Tentatif Majlis</h2>
+   <p>Bahagian ini disediakan untuk dimasukkan tentatif rasmi apabila dokumen program 2025/2026 dimuktamadkan.</p>
+  </div>
+  <div class="content-card">
+   <div class="notice">⚠️ Kandungan tentatif belum dimasukkan kerana data rasmi belum disediakan dalam prototype ini.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="jawatankuasa">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Pengurusan</div>
+   <h2>Jawatankuasa Program</h2>
+   <p>Ruang khas untuk senarai jawatankuasa dan urus setia.</p>
+  </div>
+  <div class="content-card">
+   <div class="notice">⚠️ Senarai jawatankuasa rasmi akan dimasukkan daripada dokumen program yang disahkan.</div>
   </div>
  </div>
 </section>
@@ -191,12 +257,26 @@ footer small{opacity:.65;line-height:1.6}
  </div>
 </section>
 
+
+<section class="section alt" id="galeri">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Galeri</div>
+   <h2>Galeri Program</h2>
+   <p>Ruang untuk foto rasmi majlis, persiapan dan detik-detik penghargaan.</p>
+  </div>
+  <div class="content-card">
+   <div class="notice">📸 Galeri foto program akan dimasukkan selepas bahan rasmi disediakan.</div>
+  </div>
+ </div>
+</section>
+
 <section class="section" id="tentang">
  <div class="container">
   <div class="section-head">
    <div class="eyebrow">Tentang</div>
    <h2>Majlis Apresiasi Pendidikan 2025</h2>
-   <p>Prototype buku program digital yang dibangunkan sebagai rintis untuk sistem buku program interaktif.</p>
+   <p>Prototype buku program digital yang dibangunkan sebagai rintis. Struktur ini boleh digunakan semula untuk edisi Hari Anugerah Kecemerlangan 2026.</p>
   </div>
   <div class="about">
    <div class="about-card">
@@ -204,7 +284,7 @@ footer small{opacity:.65;line-height:1.6}
     <p>Memudahkan ibu bapa mencari nama anak dan melihat pencapaian yang direkodkan dalam program.</p>
    </div>
    <div class="about-card">
-    <h3>🏆 Konsep Digital</h3>
+    <h3>🏆 Sistem Pencapaian</h3>
     <p>Setiap profile murid menggabungkan rekod anugerah akademik, kokurikulum, sahsiah dan KAFA apabila tersedia dalam data program.</p>
    </div>
   </div>
