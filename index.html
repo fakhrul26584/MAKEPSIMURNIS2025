@@ -91,6 +91,18 @@ button,input{font:inherit}
 footer{background:#061c2e;color:#fff;padding:45px 0}
 footer .inner{display:flex;justify-content:space-between;gap:20px;align-items:end}
 footer small{opacity:.65;line-height:1.6}
+
+.qr-btn{border:0;border-radius:999px;padding:12px 16px;background:#f4ead5;color:var(--navy);font-weight:900;cursor:pointer}
+.qr-modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(4,22,37,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:18px}
+.qr-modal.show{display:flex}
+.qr-card{width:min(420px,100%);background:#fffdf9;border:1px solid var(--line);border-radius:28px;padding:28px;text-align:center;box-shadow:0 30px 90px rgba(0,0,0,.28)}
+.qr-card h3{color:var(--navy);font-size:25px;margin:4px 0 8px}
+.qr-card p{color:var(--muted);font-size:13px;line-height:1.55}
+#qrcode{display:flex;justify-content:center;align-items:center;background:#fff;padding:14px;border-radius:18px;margin:18px auto;width:240px;height:240px}
+#qrcode img{max-width:100%;height:auto}
+.qr-name{font-weight:900;color:var(--navy);font-size:16px}
+.qr-close{border:0;border-radius:999px;padding:12px 20px;background:var(--navy);color:#fff;font-weight:900;cursor:pointer;margin-top:14px}
+
 .toast{position:fixed;right:18px;bottom:18px;z-index:100;background:var(--navy);color:#fff;border-radius:15px;padding:12px 15px;box-shadow:var(--shadow);display:none;font-size:13px;font-weight:800}
 
 .share-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -205,8 +217,21 @@ footer small{opacity:.65;line-height:1.6}
   <small>Prototype Buku Program Digital • Untuk tujuan rintis</small>
  </div>
 </footer>
+
+<div class="qr-modal" id="qrModal" aria-hidden="true">
+ <div class="qr-card">
+  <div class="hello">Pencapaian Murid</div>
+  <h3 id="qrTitle">QR Pencapaian</h3>
+  <div id="qrcode"></div>
+  <div class="qr-name" id="qrName"></div>
+  <p>Imbas QR ini untuk membuka profile pencapaian murid secara terus.</p>
+  <button class="qr-close" id="qrClose">Tutup</button>
+ </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="data.js"></script>
 <script>
 const IMAGE_ROOT="./GAMBAR MURID/";
@@ -247,6 +272,16 @@ async function copyStudent(s){
  try{await navigator.clipboard.writeText(url);showToast("Link profile disalin");}
  catch(e){window.prompt("Salin link profile ini:",url);}
 }
+function showQR(s){
+ const modal=document.getElementById("qrModal");
+ const box=document.getElementById("qrcode");
+ box.innerHTML="";
+ document.getElementById("qrTitle").textContent="QR Pencapaian";
+ document.getElementById("qrName").textContent=s.name;
+ new QRCode(box,{text:studentUrl(s),width:210,height:210,colorDark:"#092b49",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
+ modal.classList.add("show");
+ modal.setAttribute("aria-hidden","false");
+}
 function showProfile(s, updateUrl=true){
  const img=s.image
   ? `<img class="profile-photo" src="${imageUrl(s.image)}" alt="${esc(s.name)}" onerror="this.style.opacity='.2'">`
@@ -270,11 +305,13 @@ function showProfile(s, updateUrl=true){
    <div class="share-actions">
     <button class="share-btn" id="shareProfileBtn">🔗 Kongsi Pencapaian Anak</button>
     <button class="share-btn secondary" id="copyProfileBtn">📋 Salin Link</button>
+    <button class="qr-btn" id="qrProfileBtn">▣ QR Pencapaian</button>
    </div>
   </div>`;
  profile.classList.add("show");
  document.getElementById("shareProfileBtn").onclick=()=>shareStudent(s);
  document.getElementById("copyProfileBtn").onclick=()=>copyStudent(s);
+ document.getElementById("qrProfileBtn").onclick=()=>showQR(s);
  if(updateUrl){
   const url=new URL(window.location.href);
   url.searchParams.set("murid",s.name);
@@ -332,6 +369,15 @@ function loadDirectProfile(){
  showProfile(s,false);
 }
 window.addEventListener("load",loadDirectProfile);
+
+document.getElementById("qrClose").addEventListener("click",()=>{
+ const m=document.getElementById("qrModal");
+ m.classList.remove("show");
+ m.setAttribute("aria-hidden","true");
+});
+document.getElementById("qrModal").addEventListener("click",e=>{
+ if(e.target.id==="qrModal") document.getElementById("qrClose").click();
+});
 
 const counts={};
 students.forEach(s=>s.awards.forEach(a=>{const k=a.category||"Lain-lain";counts[k]=(counts[k]||0)+1}));
