@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hari Anugerah Kecemerlangan 2025 | SK Sungai Isap Murni</title>
-<meta name="description" content="Buku Program Digital — Majlis Apresiasi Pendidikan SK Sungai Isap Murni 2025">
+<title>MAJLIS APRESIASI PENDIDIKAN SIMURNIS 2025</title>
+<meta name="description" content="Buku Program Digital — Majlis Apresiasi Pendidikan SIMurniS 2025">
 <style>
 :root{
   --navy:#092b49;--blue:#14618d;--blue2:#0d466a;--gold:#d9ad4c;
@@ -122,6 +122,23 @@ footer small{opacity:.65;line-height:1.6}
 #galleryQrCode img{width:210px;height:210px}
 .gallery-qr-image{display:block;width:210px;height:210px;background:#fff;padding:8px;border-radius:14px}
 .qr-caption{margin-top:10px;font-size:12px;font-weight:900;color:var(--navy);text-align:center}
+
+/* V10 — animated programme cover */
+.hero{min-height:100vh;display:flex;align-items:center;background:radial-gradient(circle at 15% 18%,rgba(217,173,76,.22),transparent 22%),radial-gradient(circle at 88% 72%,rgba(20,97,141,.48),transparent 30%),linear-gradient(135deg,#061a2d 0%,#0b3858 48%,#123f61 100%)}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid rgba(255,255,255,.12);right:-170px;top:-180px;box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 140px rgba(255,255,255,.018)}
+.hero .inner{padding:90px 0 80px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.cover-logo-wrap{width:150px;height:150px;border-radius:50%;padding:10px;background:rgba(255,255,255,.96);box-shadow:0 18px 55px rgba(0,0,0,.22);animation:floatLogo 3.4s ease-in-out infinite;margin-bottom:22px}.cover-logo{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.cover-kicker{font-size:13px;letter-spacing:.25em;text-transform:uppercase;font-weight:900;color:#f4d27d}.hero h1{max-width:1000px;text-shadow:0 10px 40px rgba(0,0,0,.22)}.hero h1 .gold{color:#f0cc73}
+.cover-meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}.cover-pill{padding:9px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);font-size:12px;font-weight:900;backdrop-filter:blur(8px)}
+.cover-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:min(900px,100%);margin-top:34px}.cover-menu .btn{min-height:54px;display:flex;align-items:center;justify-content:center;animation:menuFloat 4s ease-in-out infinite}.cover-menu .btn:nth-child(2){animation-delay:.18s}.cover-menu .btn:nth-child(3){animation-delay:.36s}.cover-menu .btn:nth-child(4){animation-delay:.54s}.cover-hint{margin-top:18px;font-size:12px;opacity:.62;animation:pulseHint 2.2s ease-in-out infinite}
+@keyframes floatLogo{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}@keyframes menuFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}@keyframes pulseHint{0%,100%{opacity:.45}50%{opacity:.9}}
+.program-menu .program-card{animation:menuFloat 5s ease-in-out infinite}.program-menu .program-card:nth-child(2){animation-delay:.12s}.program-menu .program-card:nth-child(3){animation-delay:.24s}.program-menu .program-card:nth-child(4){animation-delay:.36s}.program-menu .program-card:nth-child(5){animation-delay:.48s}.program-menu .program-card:nth-child(6){animation-delay:.6s}
+.content-card.rich{background:linear-gradient(145deg,#fff,#fbf7ef)}.committee-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.committee-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.committee-card h3{margin:0 0 9px;color:var(--navy);font-size:16px}.committee-card p{margin:0;color:var(--muted);line-height:1.65;font-size:13px}.committee-card.lead{background:linear-gradient(135deg,#edf4f8,#fff);border-color:#cfe0eb}
+.tentatif-list{display:grid;gap:10px}.tentatif-item{display:grid;grid-template-columns:115px 1fr;gap:16px;padding:16px;border:1px solid var(--line);border-radius:18px;background:#fff}.tentatif-time{font-weight:900;color:var(--blue)}.tentatif-item b{color:var(--navy)}
+.category-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:26px}.category-group{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px}.category-group h3{margin:0 0 10px;color:var(--navy)}.category-group p{margin:0;color:var(--muted);line-height:1.7;font-size:13px}.aluan{display:grid;grid-template-columns:1fr 1fr;gap:18px}.aluan-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}.aluan-card h3{color:var(--navy);margin-top:0}.aluan-card p{color:var(--muted);line-height:1.8}
+@media(max-width:800px){.cover-menu{grid-template-columns:repeat(2,1fr)}.committee-grid,.category-groups,.aluan{grid-template-columns:1fr}.tentatif-item{grid-template-columns:1fr}}
+@media(max-width:560px){.cover-logo-wrap{width:118px;height:118px}.cover-menu{grid-template-columns:1fr}.hero{min-height:100svh}}
+
 @media(max-width:800px){.gallery-feature{grid-template-columns:1fr}}
 
 .program-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -157,11 +174,12 @@ footer small{opacity:.65;line-height:1.6}
 
 <header class="topbar">
  <div class="container inner">
-  <a class="brand" href="#utama">SIMurniS • 2025<small>DIGITAL PROGRAMME</small></a>
+  <a class="brand" href="#utama">SIMurniS • 2025<small>BUKU PROGRAM DIGITAL</small></a>
   <button class="menu-btn" id="menuBtn">☰</button>
   <nav class="nav" id="nav">
    <a href="#utama">Utama</a>
    <a href="#buku-program">Buku Program</a>
+   <a href="#pengenalan">Pengenalan</a>
    <a href="#tentatif">Tentatif</a>
    <a href="#jawatankuasa">Jawatankuasa</a>
    <a href="#kategori">Anugerah</a>
@@ -173,61 +191,51 @@ footer small{opacity:.65;line-height:1.6}
 
 <section class="hero" id="utama">
  <div class="container inner">
-  <div class="eyebrow">Buku Program Digital</div>
-  <h1>Hari Anugerah<br><span>Kecemerlangan</span></h1>
-  <div class="date">SK Sungai Isap Murni • 2025 • Buku Program Digital</div>
-  <p class="lead">Buku program digital yang menghimpunkan maklumat program, kategori anugerah dan pencapaian setiap murid.</p>
-  <div class="actions">
-   <a class="btn btn-white" href="#semak">🔎 Semak Anugerah Murid</a>
-   <a class="btn btn-gold" href="#kategori">🏆 Lihat Kategori</a>
-  </div>
+  <div class="cover-logo-wrap"><img class="cover-logo" src="logo-sksim.png" alt="Lencana Sekolah Kebangsaan Sungai Isap Murni"></div>
+  <div class="cover-kicker">Buku Program Digital</div>
+  <h1>MAJLIS APRESIASI<br><span class="gold">PENDIDIKAN SIMURNIS</span></h1>
+  <div class="date">SK Sungai Isap Murni • Rabu, 17 Disember 2025</div>
+  <div class="cover-meta"><span class="cover-pill">📍 Dewan Ibnu Bhathutah</span><span class="cover-pill">🕗 8.00 Pagi – 12.00 Tengah Hari</span></div>
+  <p class="lead">Mengiktiraf pencapaian murid dalam akademik, kokurikulum dan sahsiah serta menyemarakkan semangat untuk terus mencapai kecemerlangan.</p>
+  <div class="cover-menu"><a class="btn btn-white" href="#buku-program">📖 Buku Program</a><a class="btn btn-gold" href="#tentatif">📋 Tentatif</a><a class="btn btn-white" href="#semak">🔎 Semak Anugerah</a><a class="btn btn-gold" href="#galeri">📸 Galeri</a></div>
+  <div class="cover-hint">↓ Teroka kandungan program</div>
  </div>
 </section>
 
 
 <section class="section" id="buku-program">
- <div class="container">
-  <div class="section-head">
-   <div class="eyebrow">Buku Program Digital</div>
-   <h2>Selamat Datang</h2>
-   <p>Menu utama untuk meneroka kandungan program. Kandungan rasmi seperti teks alu-aluan, tentatif dan jawatankuasa akan dimasukkan daripada dokumen program yang disahkan.</p>
-  </div>
-  <div class="program-menu">
-   <a class="program-card" href="#tentatif"><div class="icon">📋</div><h3>Tentatif</h3><p>Lihat perjalanan majlis mengikut masa dan aktiviti.</p></a>
-   <a class="program-card" href="#jawatankuasa"><div class="icon">👥</div><h3>Jawatankuasa</h3><p>Senarai urus setia dan jawatankuasa program.</p></a>
-   <a class="program-card" href="#kategori"><div class="icon">🏆</div><h3>Anugerah Kecemerlangan</h3><p>Teroka kategori anugerah dan penerima.</p></a>
-   <a class="program-card" href="#semak"><div class="icon">🔎</div><h3>Semak Anugerah Anak</h3><p>Cari nama anak dan buka profile pencapaian.</p></a>
-   <a class="program-card" href="#galeri"><div class="icon">📸</div><h3>Galeri</h3><p>Ruang galeri rasmi program.</p></a>
-   <a class="program-card" href="#tentang"><div class="icon">📖</div><h3>Tentang Program</h3><p>Maklumat ringkas dan tujuan program.</p></a>
-  </div>
- </div>
+ <div class="container"><div class="section-head"><div class="eyebrow">Isi Kandungan</div><h2>Buku Program Digital</h2><p>Semua kandungan utama buku program disusun dalam satu ruang digital yang mudah diterokai.</p></div>
+ <div class="program-menu">
+  <a class="program-card" href="#pengenalan"><div class="icon">🎓</div><h3>Pengenalan</h3><p>Matlamat dan objektif majlis.</p></a>
+  <a class="program-card" href="#tentatif"><div class="icon">📋</div><h3>Atur Cara Majlis</h3><p>Susunan perjalanan majlis pada 17 Disember 2025.</p></a>
+  <a class="program-card" href="#jawatankuasa"><div class="icon">👥</div><h3>Jawatankuasa</h3><p>Senarai urus setia dan tugasan program.</p></a>
+  <a class="program-card" href="#kategori"><div class="icon">🏆</div><h3>Senarai Anugerah</h3><p>Kategori pengiktirafan yang dipertandingkan.</p></a>
+  <a class="program-card" href="#semak"><div class="icon">🔎</div><h3>Semak Anugerah Anak</h3><p>Cari nama dan buka profile pencapaian.</p></a>
+  <a class="program-card" href="#galeri"><div class="icon">📸</div><h3>Galeri</h3><p>Galeri foto rasmi melalui Google Photos.</p></a>
+ </div></div>
 </section>
 
-<section class="section alt" id="tentatif">
- <div class="container">
-  <div class="section-head">
-   <div class="eyebrow">Program</div>
-   <h2>Tentatif Majlis</h2>
-   <p>Bahagian ini disediakan untuk dimasukkan tentatif rasmi apabila dokumen program 2025/2026 dimuktamadkan.</p>
-  </div>
-  <div class="content-card">
-   <div class="notice">⚠️ Kandungan tentatif belum dimasukkan kerana data rasmi belum disediakan dalam prototype ini.</div>
-  </div>
- </div>
-</section>
+<section class="section alt" id="pengenalan"><div class="container"><div class="section-head"><div class="eyebrow">01 • Pengenalan</div><h2>Matlamat & Objektif</h2><p>Kandungan ini diambil daripada buku program rasmi 2025.</p></div><div class="aluan"><div class="aluan-card"><h3>🎯 Matlamat</h3><p>Program ini bermatlamat memberi penghargaan kepada murid-murid yang memperolehi pencapaian yang terbaik dalam bidang akademik, ko-kurikulum dan mempunyai sahsiah yang cemerlang.</p></div><div class="aluan-card"><h3>🏅 Objektif</h3><p>Mengiktiraf pencapaian murid sepanjang tahun; menghargai hasil usaha murid dalam akademik dan kokurikulum; serta meningkatkan semangat dan motivasi murid untuk berdaya saing mencapai kecemerlangan dalam bidang akademik, kokurikulum dan sahsiah murid.</p></div></div><div class="aluan" style="margin-top:18px"><div class="aluan-card"><h3>🎤 Ucapan Aluan</h3><p><strong>Encik Zulfadzli bin Ismail</strong><br>Guru Besar SIMurniS</p><p>Ucapan aluan disenaraikan dalam atur cara rasmi majlis.</p></div><div class="aluan-card"><h3>🎙️ Ucapan Perasmian</h3><p><strong>YBRS. Dr. Mohd Saleh bin Ramli</strong><br>Dekan Fakulti Sains Al-Quran, University College of Yayasan Pahang (UCYP University)</p></div></div></div></section>
 
-<section class="section" id="jawatankuasa">
- <div class="container">
-  <div class="section-head">
-   <div class="eyebrow">Pengurusan</div>
-   <h2>Jawatankuasa Program</h2>
-   <p>Ruang khas untuk senarai jawatankuasa dan urus setia.</p>
-  </div>
-  <div class="content-card">
-   <div class="notice">⚠️ Senarai jawatankuasa rasmi akan dimasukkan daripada dokumen program yang disahkan.</div>
-  </div>
- </div>
-</section>
+<section class="section alt" id="tentatif"><div class="container"><div class="section-head"><div class="eyebrow">02 • Atur Cara</div><h2>Tentatif Majlis</h2><p>Rabu, 17 Disember 2025 • Dewan Ibnu Bhathutah</p></div><div class="content-card rich"><div class="tentatif-list">
+<div class="tentatif-item"><div class="tentatif-time">8:00 – 8:15 Pagi</div><div><b>Ketibaan ibu bapa / penjaga murid</b></div></div>
+<div class="tentatif-item"><div class="tentatif-time">8:30 Pagi</div><div><b>Ketibaan para jemputan dan dif-dif kehormat</b></div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div>Ucapan aluan pengacara majlis • Bacaan doa • Ucapan aluan Encik Zulfadzli bin Ismail, Guru Besar SIMurniS</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Nyanyian 2 buah lagu</b></div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Ucapan Perasmian Majlis Apresiasi Pendidikan SIMurniS</b><br>YBRS. Dr. Mohd Saleh bin Ramli</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Penyampaian Anugerah Tahap 1</b><br>Mata pelajaran terbaik • Murid pemulihan terbaik • Pembaca terbanyak Ains • Murid berpotensi • Terbaik aliran • Sahsiah terbaik • Kehadiran penuh</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Penyampaian Anugerah KAFA Tahap 1</b><br>Anugerah kedudukan dalam kelas • Anugerah kedatangan terbaik • Anugerah Sahsiah Terpuji</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div>Persembahan 1 & 2 • Persembahan 3 • Penyampaian cenderahati perasmi</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Penyampaian Anugerah Khas</b><br>Tokoh KAFA • Tokoh Sahsiah • Tokoh Kokurikulum • Tokoh Murid</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Penyampaian Anugerah Tahap 2</b><br>Mata pelajaran terbaik • Pembaca terbanyak Ains • Murid berpotensi • Terbaik aliran • Sahsiah terbaik • Kehadiran penuh • Kebersihan dan keceriaan kelas • Kehadiran kelas terbaik • Kokurikulum Tahap 2</div></div>
+<div class="tentatif-item"><div class="tentatif-time">—</div><div><b>Penyampaian Anugerah KAFA Tahap 2</b><br>Anugerah kedudukan dalam kelas • Anugerah kedatangan terbaik • Anugerah Sahsiah Terpuji • Anugerah Kecemerlangan Peperiksaan Percubaan UPKK 2025</div></div>
+<div class="tentatif-item"><div class="tentatif-time">11:00 Pagi</div><div><b>Jamuan</b></div></div><div class="tentatif-item"><div class="tentatif-time">12:00 Tengah Hari</div><div><b>Bersurai</b></div></div>
+</div></div></div></section>
+
+<section class="section" id="jawatankuasa"><div class="container"><div class="section-head"><div class="eyebrow">03 • Pengurusan</div><h2>Jawatankuasa Majlis</h2><p>Senarai jawatankuasa berdasarkan buku program rasmi 2025.</p></div><div class="committee-grid">
+<div class="committee-card lead"><h3>Pengerusi</h3><p>Encik Zulfadzli bin Ismail</p></div><div class="committee-card lead"><h3>Naib Pengerusi 1</h3><p>Encik Hassan bin Ahmad</p></div><div class="committee-card lead"><h3>Naib Pengerusi 2</h3><p>Puan Norlaila binti Jusoh</p></div><div class="committee-card lead"><h3>Naib Pengerusi 3</h3><p>Encik Mohd Rassidi binti Saini</p></div><div class="committee-card lead"><h3>Penyelaras Program</h3><p>Encik Mohd Ramdzan bin Mohd Zain</p></div><div class="committee-card lead"><h3>Timbalan Penyelaras</h3><p>Encik Zaidi bin Deraman</p></div>
+<div class="committee-card"><h3>Penyambut Tetamu</h3><p>En. Zulfadzli bin Ismail<br>En. Hassan bin Ahmad<br>Pn. Norlaila binti Jusoh<br>En. Mohd Rassidi bin Saini</p></div><div class="committee-card"><h3>Pengacara Majlis</h3><p>Pn. Nur Athirah binti Rosmadi<br>En. Rozaini bin Zulkiffle<br>En. Nor Hafiz Akmal bin Razak</p></div><div class="committee-card"><h3>Buku Program</h3><p>Cik Nurul Syafiqah binti Mohd Aris<br>Cik Norfiza binti Abdullah Omar</p></div><div class="committee-card"><h3>Hiasan Pentas</h3><p>Pn. Amalia Nazihah binti Ghazali<br>Pn. Zamzarina binti Abdul Samad<br>Pn. Hanak binti Abdul Karim<br>En. Mohd Ramdzan bin Mohd Zain</p></div><div class="committee-card"><h3>PA Sistem</h3><p>En. Ahmad Fadzil bin Abdullah<br>En. Mohd Shauqi Hazriq bin Mohd Said</p></div><div class="committee-card"><h3>Persembahan dan Sambutan</h3><p>Pn. Wan Nur Surya binti Wan Rahin<br>Pn. Norhafiza binti Jamaludin</p></div><div class="committee-card"><h3>Bacaan Doa</h3><p>En. Nor Hafiz Akmal bin Razak</p></div><div class="committee-card"><h3>Persiapan Tempat</h3><p>En. Mohamad Azmi bin Ali<br>En. Fakhrul Anwar bin Ihyaudeen<br>Pekerja Kebersihan</p></div><div class="committee-card"><h3>Fotografi dan Dokumentasi</h3><p>Pn. Zaliha binti Yahaya<br>Pn. Wan Nur Surya binti Wan Rahin<br>Pn. Nur Aini Amalina binti Hamali</p></div><div class="committee-card"><h3>Pendaftaran</h3><p>Pn. Siti Noor Fadzilah binti Sheikh Zuhari<br>Pn. Fauziah binti Abu Bakar<br>Pn. Nomasrina binti Mamat<br>Pn. Nasuha binti Mokhtar</p></div><div class="committee-card"><h3>Hadiah / Sijil dan Cenderamata</h3><p>En. Zaidi bin Deraman<br>Pn. Hasimah binti Said<br>Cik Nor Hanie Nadia binti Kimin<br>Pn. Ton Ida Haslina binti Ton Hassan</p></div><div class="committee-card"><h3>Jamuan Tetamu dan Ibu Bapa</h3><p>Pn. Saratulmazi binti Abdul Wahid<br>Pn. Wan Siti Aishah binti Wan Sulaiman<br>Pn. Umi Kalsom binti Mohd Radzi<br>Pn. Norhayati binti Mohd Lazim<br>Pn. Nurul Aini binti Zakaria<br>Pn. Rusminah binti Othman</p></div><div class="committee-card"><h3>Penyelia Peserta</h3><p>Pn. Nur Hasyyati binti Arifin<br>Pn. Rohayanti binti Basir<br>Pn. Khazimah binti Mokhtar<br>Pn. Rosazura binti Mohammad<br>Pn. Azmani binti Abdul Halim<br>Pn. Hajah Suhaili binti Abdullah<br>Pn. Maznah binti Hamat<br>Pn. Anis Rauhah binti Mohd Azhari</p></div><div class="committee-card"><h3>Kawalan Murid</h3><p>En. Hatim bin Zulkifli<br>En. Mohd Zamrul Nasri bin Abd Kadir<br>En. Mohd Azmi bin Ali<br>Pn. Falilnisa binti Hasbullah<br>Pengawas sekolah</p></div>
+</div></div></section>
 
 <section class="section" id="semak">
  <div class="container">
@@ -260,11 +268,11 @@ footer small{opacity:.65;line-height:1.6}
 <section class="section alt" id="kategori">
  <div class="container">
   <div class="section-head">
-   <div class="eyebrow">Anugerah</div>
+   <div class="eyebrow">04 • Senarai Penerima</div>
    <h2>Kategori Pengiktirafan</h2>
    <p>Klik mana-mana kategori untuk menapis penerima dalam database.</p>
   </div>
-  <div class="category-grid" id="categoryGrid"></div>
+  <div class="category-groups"><div class="category-group"><h3>📚 Anugerah Tahap 1</h3><p>Mata pelajaran terbaik • Murid pemulihan terbaik • Pembaca terbanyak Ains • Murid berpotensi • Terbaik aliran • Sahsiah terbaik • Kehadiran penuh</p></div><div class="category-group"><h3>🕌 Anugerah KAFA Tahap 1</h3><p>Anugerah kedudukan dalam kelas • Anugerah kedatangan terbaik • Anugerah Sahsiah Terpuji</p></div><div class="category-group"><h3>📖 Anugerah Tahap 2</h3><p>Mata pelajaran terbaik • Pembaca terbanyak Ains • Murid berpotensi • Terbaik aliran • Sahsiah terbaik • Kehadiran penuh • Kebersihan dan keceriaan kelas • Kehadiran kelas terbaik • Kokurikulum Tahap 2</p></div><div class="category-group"><h3>🕌 Anugerah KAFA Tahap 2</h3><p>Anugerah kedudukan dalam kelas • Anugerah kedatangan terbaik • Anugerah Sahsiah Terpuji • Anugerah Kecemerlangan Peperiksaan Percubaan UPKK 2025</p></div><div class="category-group"><h3>🌟 Anugerah Khas</h3><p>Tokoh KAFA • Tokoh Sahsiah • Tokoh Kokurikulum • Tokoh Murid</p></div><div class="category-group"><h3>🏃 Anugerah Kokurikulum</h3><p>Anugerah kokurikulum peringkat negeri / kebangsaan.</p></div></div><div class="section-head" style="margin-top:32px;margin-bottom:18px;text-align:left"><div class="eyebrow">Database Interaktif</div><h3 style="font-size:24px;color:var(--navy);margin:8px 0">Kategori yang mempunyai rekod penerima</h3><p>Klik mana-mana kategori untuk menapis penerima dalam database murid.</p></div><div class="category-grid" id="categoryGrid"></div>
  </div>
 </section>
 
@@ -274,7 +282,7 @@ footer small{opacity:.65;line-height:1.6}
   <div class="section-head">
    <div class="eyebrow">Galeri</div>
    <h2>Galeri Program</h2>
-   <p>Ruang untuk foto rasmi majlis, persiapan dan detik-detik penghargaan.</p>
+   <p>Foto rasmi majlis dan detik-detik penghargaan. Imbas QR untuk membuka galeri Google Photos.</p>
   </div>
   <div class="content-card">
    <div class="gallery-feature">
@@ -301,7 +309,7 @@ footer small{opacity:.65;line-height:1.6}
   <div class="section-head">
    <div class="eyebrow">Tentang</div>
    <h2>MAJLIS APRESIASI PENDIDIKAN SIMURNIS 2025</h2>
-   <p>Prototype buku program digital yang dibangunkan sebagai rintis. Struktur ini boleh digunakan semula untuk edisi Hari Anugerah Kecemerlangan 2026.</p>
+   <p>Buku program digital rintis yang menggabungkan kandungan rasmi program dengan sistem semakan pencapaian murid secara interaktif. Struktur ini boleh digunakan semula untuk edisi Hari Anugerah Kecemerlangan 2026.</p>
   </div>
   <div class="about">
    <div class="about-card">
@@ -319,7 +327,7 @@ footer small{opacity:.65;line-height:1.6}
 <footer>
  <div class="container inner">
   <div><strong>Majlis Apresiasi Pendidikan SK Sungai Isap Murni 2025</strong></div>
-  <small>Prototype Buku Program Digital • Untuk tujuan rintis</small>
+  <small>Buku Program Digital • Majlis Apresiasi Pendidikan SIMurniS 2025</small>
  </div>
 </footer>
 
