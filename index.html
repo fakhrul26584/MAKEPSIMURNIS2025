@@ -120,6 +120,7 @@ footer small{opacity:.65;line-height:1.6}
 .gallery-qr-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f7f2e8;border:1px solid var(--line);border-radius:24px;padding:18px}
 #galleryQrCode{background:#fff;padding:12px;border-radius:16px;display:flex;align-items:center;justify-content:center}
 #galleryQrCode img{width:210px;height:210px}
+.gallery-qr-image{display:block;width:210px;height:210px;background:#fff;padding:8px;border-radius:14px}
 .qr-caption{margin-top:10px;font-size:12px;font-weight:900;color:var(--navy);text-align:center}
 @media(max-width:800px){.gallery-feature{grid-template-columns:1fr}}
 
@@ -287,7 +288,7 @@ footer small{opacity:.65;line-height:1.6}
      </div>
     </div>
     <div class="gallery-qr-preview">
-     <div id="galleryQrCode"></div>
+     <img src="google-photos-qr.png" alt="QR Code Google Photos" class="gallery-qr-image">
      <div class="qr-caption">Imbas untuk buka galeri foto</div>
     </div>
    </div>
@@ -335,7 +336,6 @@ footer small{opacity:.65;line-height:1.6}
 
 <div class="toast" id="toast"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="data.js"></script>
 <script>
 const IMAGE_ROOT="./GAMBAR MURID/";
@@ -475,13 +475,9 @@ function loadDirectProfile(){
 window.addEventListener("load",loadDirectProfile);
 
 window.addEventListener("load",()=>{
- const box=document.getElementById("galleryQrCode");
- if(box && typeof QRCode!=="undefined"){
-  new QRCode(box,{text:"https://photos.app.goo.gl/UxKeUn2jYBsvQCcr7",width:210,height:210,colorDark:"#092b49",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
- }
  const btn=document.getElementById("galleryQrBtn");
  if(btn) btn.onclick=()=>{
-  document.getElementById("galleryQrCode").scrollIntoView({behavior:"smooth",block:"center"});
+  document.querySelector(".gallery-qr-preview").scrollIntoView({behavior:"smooth",block:"center"});
  };
 });
 
