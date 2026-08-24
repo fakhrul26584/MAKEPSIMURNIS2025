@@ -113,6 +113,16 @@ footer small{opacity:.65;line-height:1.6}
 .direct-banner.show{display:block}
 
 
+
+.gallery-feature{display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:center}
+.gallery-copy h3{margin:6px 0 10px;color:var(--navy);font-size:27px}
+.gallery-copy p{color:var(--muted);line-height:1.75}
+.gallery-qr-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f7f2e8;border:1px solid var(--line);border-radius:24px;padding:18px}
+#galleryQrCode{background:#fff;padding:12px;border-radius:16px;display:flex;align-items:center;justify-content:center}
+#galleryQrCode img{width:210px;height:210px}
+.qr-caption{margin-top:10px;font-size:12px;font-weight:900;color:var(--navy);text-align:center}
+@media(max-width:800px){.gallery-feature{grid-template-columns:1fr}}
+
 .program-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .program-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;min-height:155px;transition:.2s;cursor:pointer}
 .program-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(9,43,73,.08);border-color:var(--gold)}
@@ -266,7 +276,21 @@ footer small{opacity:.65;line-height:1.6}
    <p>Ruang untuk foto rasmi majlis, persiapan dan detik-detik penghargaan.</p>
   </div>
   <div class="content-card">
-   <div class="notice">📸 Galeri foto program akan dimasukkan selepas bahan rasmi disediakan.</div>
+   <div class="gallery-feature">
+    <div class="gallery-copy">
+     <div class="eyebrow">Google Photos</div>
+     <h3>📸 Galeri Rasmi Program</h3>
+     <p>Imbas QR code di bawah untuk membuka galeri foto program di Google Photos. Ibu bapa boleh terus melihat dan berkongsi foto melalui galeri tersebut.</p>
+     <div class="share-actions">
+      <a class="share-btn" href="https://photos.app.goo.gl/UxKeUn2jYBsvQCcr7" target="_blank" rel="noopener">📸 Buka Galeri Google Photos</a>
+      <button class="qr-btn" id="galleryQrBtn">▣ QR Galeri</button>
+     </div>
+    </div>
+    <div class="gallery-qr-preview">
+     <div id="galleryQrCode"></div>
+     <div class="qr-caption">Imbas untuk buka galeri foto</div>
+    </div>
+   </div>
   </div>
  </div>
 </section>
@@ -449,6 +473,18 @@ function loadDirectProfile(){
  showProfile(s,false);
 }
 window.addEventListener("load",loadDirectProfile);
+
+window.addEventListener("load",()=>{
+ const box=document.getElementById("galleryQrCode");
+ if(box && typeof QRCode!=="undefined"){
+  new QRCode(box,{text:"https://photos.app.goo.gl/UxKeUn2jYBsvQCcr7",width:210,height:210,colorDark:"#092b49",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
+ }
+ const btn=document.getElementById("galleryQrBtn");
+ if(btn) btn.onclick=()=>{
+  document.getElementById("galleryQrCode").scrollIntoView({behavior:"smooth",block:"center"});
+ };
+});
+
 
 document.getElementById("qrClose").addEventListener("click",()=>{
  const m=document.getElementById("qrModal");
