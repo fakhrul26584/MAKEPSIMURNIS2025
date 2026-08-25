@@ -137,6 +137,66 @@ footer small{opacity:.65;line-height:1.6}
 .gallery-qr-image{display:block;width:210px;height:210px;background:#fff;padding:8px;border-radius:14px}
 .qr-caption{margin-top:10px;font-size:12px;font-weight:900;color:var(--navy);text-align:center}
 
+
+/* ===== V15 CINEMATIC COVER ===== */
+.hero-cinematic{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.hero-cinematic .light-sweep{
+  position:absolute;top:-35%;left:-25%;width:48%;height:170%;
+  background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.045) 45%,rgba(240,204,115,.11) 52%,transparent 70%);
+  transform:rotate(18deg);filter:blur(2px);animation:lightSweep 12s ease-in-out infinite;
+}
+.hero-cinematic .halo{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.055)}
+.hero-cinematic .halo-a{width:760px;height:760px;right:-300px;top:-320px;box-shadow:0 0 0 34px rgba(255,255,255,.018),0 0 0 90px rgba(255,255,255,.012);animation:haloFloat 18s ease-in-out infinite}
+.hero-cinematic .halo-b{width:420px;height:420px;left:-210px;bottom:-240px;border-color:rgba(217,173,76,.08);box-shadow:0 0 90px rgba(217,173,76,.08);animation:haloFloatB 14s ease-in-out infinite}
+.hero .inner{z-index:2}
+.hero-logo-wrap{animation:logoFloat 4.8s cubic-bezier(.45,.05,.55,.95) infinite,logoEntrance 1s .05s both}
+.hero-logo-wrap:before{
+  content:"";position:absolute;inset:-14px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.13),rgba(217,173,76,.08) 42%,transparent 70%);
+  filter:blur(8px);opacity:.7;animation:logoAura 4.8s ease-in-out infinite;
+}
+.hero-logo-wrap:after{z-index:-1}
+.hero h1{text-shadow:0 10px 32px rgba(0,0,0,.22),0 0 42px rgba(217,173,76,.05)}
+.hero h1 span{position:relative}
+.hero h1 span:after{
+  content:"";position:absolute;left:4%;right:4%;bottom:-7px;height:2px;
+  background:linear-gradient(90deg,transparent,#f0cc73,transparent);
+  transform:scaleX(0);transform-origin:center;animation:titleLine 1s 1.05s ease forwards;
+}
+.hero .date{letter-spacing:.035em}
+.hero .actions .btn{position:relative;overflow:hidden}
+.hero .actions .btn:before{
+  content:"";position:absolute;top:0;bottom:0;left:-80%;width:55%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);
+  transform:skewX(-20deg);transition:none;
+}
+.hero .actions .btn:hover:before{animation:buttonSheen .8s ease}
+.scroll-cue{
+  display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:36px;
+  opacity:0;animation:riseIn .8s 1.35s both;color:rgba(255,255,255,.62);
+}
+.scroll-cue span{display:block;width:22px;height:34px;border:1px solid rgba(255,255,255,.38);border-radius:999px;position:relative}
+.scroll-cue span:after{content:"";position:absolute;width:3px;height:7px;border-radius:999px;background:#f0cc73;left:50%;top:6px;transform:translateX(-50%);animation:scrollDot 1.7s ease-in-out infinite}
+.scroll-cue small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+@keyframes lightSweep{0%,55%{transform:translateX(-30%) rotate(18deg);opacity:0}15%{opacity:1}42%{opacity:.55}75%,100%{transform:translateX(250%) rotate(18deg);opacity:0}}
+@keyframes haloFloat{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-22px,20px,0) rotate(4deg)}}
+@keyframes haloFloatB{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(28px,-18px,0)}}
+@keyframes logoAura{0%,100%{transform:scale(.94);opacity:.45}50%{transform:scale(1.08);opacity:.85}}
+@keyframes logoEntrance{from{opacity:0;transform:translateY(18px) scale(.92)}to{opacity:1}}
+@keyframes titleLine{to{transform:scaleX(1)}}
+@keyframes buttonSheen{from{left:-80%}to{left:145%}}
+@keyframes scrollDot{0%,100%{transform:translate(-50%,0);opacity:.35}50%{transform:translate(-50%,10px);opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .hero-cinematic,.scroll-cue{display:none}
+  .hero-logo-wrap{animation:none}
+  .hero h1 span:after{animation:none;transform:scaleX(1)}
+}
+@media(max-width:700px){
+  .scroll-cue{margin-top:28px}
+  .hero-cinematic .halo-a{width:520px;height:520px;right:-280px}
+  .hero-cinematic .halo-b{width:320px;height:320px;left:-190px}
+}
+
 /* ===== V13 PREMIUM COVER + SOCIAL SHARE ===== */
 .hero{isolation:isolate;background:
  radial-gradient(circle at 50% 8%,rgba(217,173,76,.20),transparent 22%),
@@ -255,6 +315,7 @@ footer small{opacity:.65;line-height:1.6}
 </header>
 
 <section class="hero" id="utama">
+ <div class="hero-cinematic" aria-hidden="true"><span class="light-sweep"></span><span class="halo halo-a"></span><span class="halo halo-b"></span></div>
  <div class="container inner">
   <div class="hero-logo-wrap"><img class="hero-logo" src="logo-sksim.png" alt="Logo SK Sungai Isap Murni"></div>
   <div class="eyebrow">Buku Program Digital</div>
@@ -267,6 +328,7 @@ footer small{opacity:.65;line-height:1.6}
    <a class="btn btn-white" href="#semak">🔎 Semak Anugerah</a>
    <a class="btn btn-gold" href="#galeri">📸 Galeri</a>
   </div>
+  <div class="scroll-cue" aria-hidden="true"><span></span><small>Terokai program</small></div>
  </div>
 </section>
 
