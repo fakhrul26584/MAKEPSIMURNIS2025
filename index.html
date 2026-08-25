@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Majlis Apresiasi Pendidikan SIMurniS 2025 | SK Sungai Isap Murni</title>
 <meta name="description" content="Buku Program Digital — Majlis Apresiasi Pendidikan SIMurniS 2025">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Majlis Apresiasi Pendidikan SIMurniS 2025">
+<meta property="og:description" content="Buku Program Digital • SK Sungai Isap Murni • Rabu, 17 Disember 2025">
+<meta property="og:image" content="https://fakhrul-simurnis.vercel.app/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:url" content="https://fakhrul-simurnis.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Majlis Apresiasi Pendidikan SIMurniS 2025">
+<meta name="twitter:description" content="Buku Program Digital • SK Sungai Isap Murni">
+<meta name="twitter:image" content="https://fakhrul-simurnis.vercel.app/social-preview.png">
 <style>
 :root{
   --navy:#092b49;--blue:#14618d;--blue2:#0d466a;--gold:#d9ad4c;
@@ -122,6 +134,36 @@ footer small{opacity:.65;line-height:1.6}
 #galleryQrCode img{width:210px;height:210px}
 .gallery-qr-image{display:block;width:210px;height:210px;background:#fff;padding:8px;border-radius:14px}
 .qr-caption{margin-top:10px;font-size:12px;font-weight:900;color:var(--navy);text-align:center}
+
+/* ===== V13 PREMIUM COVER + SOCIAL SHARE ===== */
+.hero{isolation:isolate;background:
+ radial-gradient(circle at 50% 8%,rgba(217,173,76,.20),transparent 22%),
+ radial-gradient(circle at 86% 20%,rgba(217,173,76,.34),transparent 24%),
+ radial-gradient(circle at 15% 80%,rgba(20,97,141,.55),transparent 34%),
+ linear-gradient(135deg,#061b2f 0%,#0b3d5d 58%,#123e59 100%)}
+.hero:before,.hero:after{pointer-events:none}
+.hero:before{content:"";position:absolute;width:560px;height:560px;right:-190px;top:-250px;border:1px solid rgba(255,255,255,.08);border-radius:50%;box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 140px rgba(255,255,255,.018);animation:orbDrift 16s ease-in-out infinite}
+.hero:after{content:"";position:absolute;left:-14%;bottom:-220px;width:620px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(217,173,76,.18),transparent 65%);filter:blur(5px);animation:glowPulse 7s ease-in-out infinite}
+.hero .inner:before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(circle,rgba(255,255,255,.42) 1px,transparent 1.5px);background-size:72px 72px;opacity:.10;mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,transparent 88%);animation:starsDrift 24s linear infinite}
+.hero-logo-wrap{position:relative}
+.hero-logo-wrap:after{content:"";position:absolute;width:150px;height:22px;bottom:-18px;left:50%;transform:translateX(-50%);border-radius:50%;background:rgba(0,0,0,.30);filter:blur(9px);animation:shadowFloat 4.8s ease-in-out infinite}
+.hero-logo{position:relative;z-index:2}
+.hero .eyebrow{animation:riseIn .8s .12s both}
+.hero h1{animation:riseIn .9s .22s both}
+.hero .date{animation:riseIn .8s .34s both}
+.hero .lead{animation:riseIn .8s .44s both}
+.hero .actions{animation:riseIn .8s .56s both}
+.actions .btn:nth-child(1){animation:menuPop .55s .68s both}.actions .btn:nth-child(2){animation:menuPop .55s .78s both}.actions .btn:nth-child(3){animation:menuPop .55s .88s both}.actions .btn:nth-child(4){animation:menuPop .55s .98s both}
+.program-card,.info-card,.committee-card,.timeline-item,.category{opacity:0;transform:translateY(16px)}
+.program-card.reveal,.info-card.reveal,.committee-card.reveal,.timeline-item.reveal,.category.reveal{animation:cardReveal .65s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes orbDrift{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(-35px,28px,0) rotate(7deg)}}
+@keyframes glowPulse{0%,100%{opacity:.65;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes starsDrift{from{transform:translateY(0)}to{transform:translateY(72px)}}
+@keyframes shadowFloat{0%,100%{opacity:.48;transform:translateX(-50%) scale(.88)}50%{opacity:.25;transform:translateX(-50%) scale(.70)}}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes menuPop{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes cardReveal{to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.program-card,.info-card,.committee-card,.timeline-item,.category{opacity:1;transform:none}}
 
 /* ===== V12 POLISH ===== */
 .hero .inner{display:flex;flex-direction:column;align-items:center;text-align:center}
@@ -608,6 +650,21 @@ document.getElementById("menuBtn").addEventListener("click",()=>{
 document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",()=>{
  document.getElementById("nav").classList.remove("mobile-open");
 }));
+
+// Premium staggered reveal for programme cards and content blocks.
+const revealTargets=document.querySelectorAll(".program-card,.info-card,.committee-card,.timeline-item,.category");
+const revealObserver=new IntersectionObserver((entries)=>{
+ entries.forEach(entry=>{
+  if(!entry.isIntersecting) return;
+  const el=entry.target;
+  const siblings=[...el.parentElement.children].filter(x=>x.matches?.(".program-card,.info-card,.committee-card,.timeline-item,.category"));
+  const i=Math.max(0,siblings.indexOf(el));
+  el.style.animationDelay=Math.min(i*70,420)+"ms";
+  el.classList.add("reveal");
+  revealObserver.unobserve(el);
+ });
+},{threshold:.12});
+revealTargets.forEach(el=>revealObserver.observe(el));
 </script>
 </body>
 </html>
